@@ -1,12 +1,35 @@
-position:
-  x: float
-  y: float
-  z: float
+Position:
+  struct:
+    x: float
+    y: float
+    t: float
+  info:
+    file: Asserv_type
+    object: 
+      - position_robot
+      - Wanted_Pos
 
-speed:
-  vx: float
-  vy: float
-  vz: float
+Speed:
+  struct:
+    vx: float
+    vy: float
+    vt: float
+  info:
+    file: Asserv_type
+    object: 
+      - speed_robot
+      - Wanted_Speed
+
+Acceleration:
+  struct:
+    ax: float
+    ay: float
+    at: float
+  info:
+    file: Asserv_type
+    object: 
+      - acceleration_robot
+
 
 odom_cmd:
   enable: bool # 1 activate, 0 stop publishing
