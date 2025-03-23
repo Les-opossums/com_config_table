@@ -78,7 +78,7 @@ ESC_Command:
       - Wanted_Forced_Consigne
       - old_consigne
 
-LED:
+LED_STRUCT:
   struct:
     red: int
     green: int
@@ -86,24 +86,26 @@ LED:
   info:
     file: IHM_type
     object:
-      - LED
+      - led
 
-PUMP:
+PUMP_STRUCT:
   struct:
     id: int
     enable: bool
   info:
     file: ACTIONNEUR_type
     object:
-      - PUMP
+      - pump
 
-odom_cmd:
+ODOM_STRUCT:
   struct:
     enable: bool # 1 activate, 0 stop publishing
     freq: float # if 0, send only once else send freq
   info:
+    file: ASSERV_cmd
+    object: 
+      - odom_status
     
-
 servo_cmd:
   id: int
   angle: int  
