@@ -22,6 +22,7 @@ Speed:
     object: 
       - speed_robot
       - Wanted_Speed
+      - Max_Speed
 
 Acceleration:
   struct:
@@ -77,6 +78,24 @@ ESC_Command:
       - Wanted_Forced_Consigne
       - old_consigne
 
+LED:
+  struct:
+    red: int
+    green: int
+    blue: int
+  info:
+    file: IHM_type
+    object:
+      - LED
+
+PUMP:
+  struct:
+    id: int
+    enable: bool
+  info:
+    file: ACTIONNEUR_type
+    object:
+      - PUMP
 
 odom_cmd:
   struct:
@@ -86,8 +105,8 @@ odom_cmd:
     
 
 servo_cmd:
-  enable: bool # 1 activate, 0 stop publishing
   id: int
+  angle: int  
 
 action_done:
   is_done: bool

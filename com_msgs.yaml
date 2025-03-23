@@ -1,35 +1,87 @@
-getversion:
+GETVERSION:
   send: null
   receive: version
 
-setodometry:
+HELP:
+  send: null
+  receive: null
+
+LED:
+  send: LED
+  receive: action_done
+  info:
+    file: IHM_cmd
+    object:
+      - LED
+
+PUMP:
+  send: PUMP
+  receive: action_done
+  info:
+    file: ACTIONNEUR_cmd
+    object:
+      - PUMP
+
+SETODOM:
   send: Position
   receive: action_done
   info:
-    file: cmd_for_asserv
+    file: ASSERV_cmd
     object: 
-      - motion_pos
+      - position_robot
 
-setodometry:
+GETODOM:
+  send: odom_cmd # enable: bool # 1 activate, 0 stop publishing
+  receive: Position
+  info:
+    file: ASSERV_cmd
+    object: 
+      - position_robot
+
+MOVE:
   send: Position
   receive: action_done
+  info:
+    file: ASSERV_cmd
+    object: 
+      - position_robot
 
-odometry:
-  send: odom_cmd
-  receive: Position
-
-servo: 
-  send: servo_cmd
-  receive: null
-
-moveto:
-  send: goal_position
+SPEED:
+  send: SPEED
   receive: action_done
+  info:
+    file: ASSERV_cmd
+    object: 
+      - Wanted_Speed
 
-movecancel:
+SPEEDMAX:
+  send: SPEED
+  receive: action_done
+  info:
+    file: ASSERV_cmd
+    object: 
+      - Max_Speed
+
+FREE:
   send: null
   receive: action_done
+  info:
+    file: ASSERV_cmd
+    object: 
+      - Free
 
-servocancel:
-  send: servo_cancel
+BLOCK:
+  send: null
   receive: action_done
+  info:
+    file: ASSERV_cmd
+    object: 
+      - Block
+
+SERVO:
+  send: servo_cmd
+  receive: action_done
+  info:
+    file: ACTIONNEUR_cmd
+    object: 
+      - SERVO
