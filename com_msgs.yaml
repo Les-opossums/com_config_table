@@ -4,7 +4,11 @@ getversion:
 
 odometry:
   send: odom_cmd
-  receive: position
+  receive: Position
+
+setodometry:
+  send: Position
+  receive: action_done
 
 servo: 
   send: servo_cmd

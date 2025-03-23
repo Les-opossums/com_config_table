@@ -1,8 +1,11 @@
+version:
+  version: int
+
 Position:
   struct:
-    x: float
-    y: float
-    t: float
+    x: float  # unit in meter
+    y: float  # unit in meter
+    t: float  # unit in rad
   info:
     file: Asserv_type
     object: 
@@ -11,9 +14,9 @@ Position:
 
 Speed:
   struct:
-    vx: float
-    vy: float
-    vt: float
+    vx: float # unit in m/s
+    vy: float # unit in m/s
+    vt: float # unit in rad/s
   info:
     file: Asserv_type
     object: 
@@ -22,29 +25,70 @@ Speed:
 
 Acceleration:
   struct:
-    ax: float
-    ay: float
-    at: float
+    ax: float # unit in m/s^2
+    ay: float # unit in m/s^2
+    at: float # unit in rad/s^2
   info:
     file: Asserv_type
     object: 
       - acceleration_robot
 
+PID_coef:
+  struct:
+    kp: float
+    ki: float
+    kd: float
+  info:
+    file: Asserv_type
+    
+PID_err:
+  struct:
+    err: float
+    err_int: float
+    err_der: float
+  info:
+    file: Asserv_type
 
-odom_cmd:
-  enable: bool # 1 activate, 0 stop publishing
-  freq: float # if 0, send only once else send freq
+PID_pos:
+  struct:
+    coef: PID_coef
+    err: PID_err
+  info:
+    file: Asserv_type
 
-servo_cmd:
-  enable: bool # 1 activate, 0 stop publishing
-  time_wait: float 
-  id: int
+PID_speed:
+  struct:
+    coef: PID_coef
+    err1: PID_err
+    err2: PID_err
+    err3: PID_err
+  info:
+    file: Asserv_type
 
-action_done:
-  is_done: bool
+ESC_Command:
+  struct:
+    command1: float
+    command2: float
+    command3: float
+  info:
+    file: Asserv_type
+    object:
+      - Consigne
+      - Wanted_Forced_Consigne
+      - old_consigne
 
-servo_cancel:
-  id: int
 
-version:
-  version: int
+# odom_cmd:
+#   enable: bool # 1 activate, 0 stop publishing
+#   freq: float # if 0, send only once else send freq
+
+# servo_cmd:
+#   enable: bool # 1 activate, 0 stop publishing
+#   id: int
+
+# action_done:
+#   is_done: bool
+
+# servo_cancel:
+#   id: int
+
