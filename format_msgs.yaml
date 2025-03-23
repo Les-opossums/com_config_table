@@ -1,6 +1,6 @@
 version:
   version: int
-
+  
 Position:
   struct:
     x: float  # unit in meter
@@ -78,17 +78,20 @@ ESC_Command:
       - old_consigne
 
 
-# odom_cmd:
-#   enable: bool # 1 activate, 0 stop publishing
-#   freq: float # if 0, send only once else send freq
+odom_cmd:
+  struct:
+    enable: bool # 1 activate, 0 stop publishing
+    freq: float # if 0, send only once else send freq
+  info:
+    
 
-# servo_cmd:
-#   enable: bool # 1 activate, 0 stop publishing
-#   id: int
+servo_cmd:
+  enable: bool # 1 activate, 0 stop publishing
+  id: int
 
-# action_done:
-#   is_done: bool
+action_done:
+  is_done: bool
 
-# servo_cancel:
-#   id: int
+servo_cancel:
+  id: int
 

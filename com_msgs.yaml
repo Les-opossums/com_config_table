@@ -2,13 +2,21 @@ getversion:
   send: null
   receive: version
 
-odometry:
-  send: odom_cmd
-  receive: Position
+setodometry:
+  send: Position
+  receive: action_done
+  info:
+    file: cmd_for_asserv
+    object: 
+      - motion_pos
 
 setodometry:
   send: Position
   receive: action_done
+
+odometry:
+  send: odom_cmd
+  receive: Position
 
 servo: 
   send: servo_cmd
