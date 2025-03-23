@@ -1,0 +1,23 @@
+getversion:
+  send: null
+  receive: version
+
+odometry:
+  send: odom_cmd
+  receive: position
+
+servo: 
+  send: servo_cmd
+  receive: null
+
+moveto:
+  send: goal_position
+  receive: action_done
+
+movecancel:
+  send: null
+  receive: action_done
+
+servocancel:
+  send: servo_cancel
+  receive: action_done

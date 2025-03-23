@@ -1,0 +1,27 @@
+position:
+  x: float
+  y: float
+  z: float
+
+speed:
+  vx: float
+  vy: float
+  vz: float
+
+odom_cmd:
+  enable: bool # 1 activate, 0 stop publishing
+  freq: float # if 0, send only once else send freq
+
+servo_cmd:
+  enable: bool # 1 activate, 0 stop publishing
+  time_wait: float 
+  id: int
+
+action_done:
+  is_done: bool
+
+servo_cancel:
+  id: int
+
+version:
+  version: int
