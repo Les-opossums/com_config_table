@@ -120,6 +120,23 @@ PUMP_ARRAY:
     object:
       - pump_array
 
+SERVO:
+  struct:
+    id: int
+    angle: int
+  info:
+    file: ACTIONNEUR_type
+    object:
+      - servo
+
+SERVO_ARRAY:
+  array:
+    size: 2
+    type: SERVO
+  info:
+    file: ACTIONNEUR_type
+    object:
+      - servo_array
 
 ODOM_STRUCT:
   struct:
