@@ -10,6 +10,9 @@ There are three files for the configuration :
 - **com_msgs.yaml** : The name of each table is equal to the name of the command used as header of the communication. The only rule heare is to use caracters <strong>^[a-zA-Z]+$</strong>. The <em><strong>send</em></strong> or <em><strong>receive</em></strong> parameters are describing the behavior of the communication. 
     - <em><strong>send</em></strong> : type of parameters to send after header (ROS perspective)
     - <em><strong>receive</em></strong> : type of parameters to receive after header (ROS perspective)
+    - <em><strong>info</em></strong> : type of parameters to give further informations for code c generator:
+        - file : name of the file in which the generator shall create the interpretor function
+        - object : c variable associated to this function. 
 
 - **format_msgs.yaml** : 
     - The <em><strong>struct</em></strong> parameter of the table is the format of the c struct with all parameters and their type.
