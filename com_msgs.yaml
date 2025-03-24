@@ -1,38 +1,34 @@
 GETVERSION:
   send: null
-  receive: version
+  receive: Version
+  info:
+    file: com_cmd
+    object:
+      - version
 
 HELP:
   send: null
   receive: null
 
-LED:
-  send: LED
-  receive: action_done
-  info:
-    file: IHM_cmd
-    object:
-      - LED
-
 PUMP:
-  send: PUMP
-  receive: action_done
+  send: PUMP_STRUCT
+  receive: cmd_done
   info:
     file: ACTIONNEUR_cmd
     object:
-      - PUMP
+      - pump_array
+
+LED:
+  send: LED_STRUCT
+  receive: cmd_done
+  info:
+    file: IHM_cmd
+    object:
+      - led_array
 
 SETODOM:
   send: Position
-  receive: action_done
-  info:
-    file: ASSERV_cmd
-    object: 
-      - position_robot
-
-GETODOM:
-  send: odom_cmd # enable: bool # 1 activate, 0 stop publishing
-  receive: Position
+  receive: cmd_done
   info:
     file: ASSERV_cmd
     object: 
@@ -47,7 +43,7 @@ MOVE:
       - position_robot
 
 SPEED:
-  send: SPEED
+  send: Speed
   receive: action_done
   info:
     file: ASSERV_cmd
@@ -55,33 +51,42 @@ SPEED:
       - Wanted_Speed
 
 SPEEDMAX:
-  send: SPEED
-  receive: action_done
+  send: Speed
+  receive: cmd_done
   info:
     file: ASSERV_cmd
     object: 
       - Max_Speed
 
-FREE:
-  send: null
-  receive: action_done
-  info:
-    file: ASSERV_cmd
-    object: 
-      - Free
+# GETODOM:
+#   send: odom_cmd # enable: bool # 1 activate, 0 stop publishing
+#   receive: Position
+#   info:
+#     file: ASSERV_cmd
+#     object: 
+#       - position_robot
 
-BLOCK:
-  send: null
-  receive: action_done
-  info:
-    file: ASSERV_cmd
-    object: 
-      - Block
 
-SERVO:
-  send: servo_cmd
-  receive: action_done
-  info:
-    file: ACTIONNEUR_cmd
-    object: 
-      - SERVO
+# FREE:
+#   send: null
+#   receive: action_done
+#   info:
+#     file: ASSERV_cmd
+#     object: 
+#       - Free
+
+# BLOCK:
+#   send: null
+#   receive: action_done
+#   info:
+#     file: ASSERV_cmd
+#     object: 
+#       - Block
+
+# SERVO:
+#   send: servo_cmd
+#   receive: action_done
+#   info:
+#     file: ACTIONNEUR_cmd
+#     object: 
+#       - SERVO

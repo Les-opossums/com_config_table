@@ -1,5 +1,10 @@
-version:
-  version: int
+Version:
+  variable:
+    version: int
+  info:
+    file: com_type
+    object:
+      - version
   
 Position:
   struct:
@@ -88,18 +93,37 @@ LED_STRUCT:
     object:
       - led
 
+LED_ARRAY:
+  array:
+    size: 44
+    type: LED_STRUCT
+  info:
+    file: IHM_type
+    object:
+      - led_array
+
 PUMP_STRUCT:
   struct:
     id: int
-    enable: bool
+    enable: int # 1 activate, 0 stop
   info:
     file: ACTIONNEUR_type
     object:
       - pump
 
+PUMP_ARRAY:
+  array:
+    size: 6
+    type: PUMP_STRUCT
+  info:
+    file: ACTIONNEUR_type
+    object:
+      - pump_array
+
+
 ODOM_STRUCT:
   struct:
-    enable: bool # 1 activate, 0 stop publishing
+    enable: int # 1 activate, 0 stop publishing
     freq: float # if 0, send only once else send freq
   info:
     file: ASSERV_cmd
@@ -111,7 +135,10 @@ servo_cmd:
   angle: int  
 
 action_done:
-  is_done: bool
+  action_done: bool
+
+cmd_done:
+  cmd_done: bool
 
 servo_cancel:
   id: int
