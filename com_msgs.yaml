@@ -59,7 +59,7 @@ SPEEDMAX:
       - Max_Speed
 
 GETODOM:
-  send: null # enable: bool # 1 activate, 0 stop publishing
+  send: odom_cmd # enable: bool # 1 activate, 0 stop publishing
   receive: Position
   info:
     file: ASSERV_cmd
@@ -67,26 +67,26 @@ GETODOM:
       - position_robot
 
 
-# FREE:
-#   send: null
-#   receive: action_done
-#   info:
-#     file: ASSERV_cmd
-#     object: 
-#       - Free
+FREE:
+  send: null
+  receive: action_done
+  info:
+    file: ASSERV_cmd
+    object: 
+      - Free
 
-# BLOCK:
-#   send: null
-#   receive: action_done
-#   info:
-#     file: ASSERV_cmd
-#     object: 
-#       - Block
+BLOCK:
+  send: null
+  receive: action_done
+  info:
+    file: ASSERV_cmd
+    object: 
+      - Block
 
 SERVO:
-  send: SERVO
+  send: servo_cmd
   receive: action_done
   info:
     file: ACTIONNEUR_cmd
     object: 
-      - servo_array
+      - SERVO

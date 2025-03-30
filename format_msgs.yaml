@@ -146,17 +146,25 @@ ODOM_STRUCT:
     file: ASSERV_cmd
     object: 
       - odom_status
-    
+
+odom_cmd:
+  struct:
+    enable: int # 1 activate, 0 stop
+    freq: float
+
 servo_cmd:
   id: int
   angle: int  
 
 action_done:
-  action_done: bool
+  struct:
+    action_done: bool
 
 cmd_done:
   cmd_done: bool
 
 servo_cancel:
   id: int
+
+
 
