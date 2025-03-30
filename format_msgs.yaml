@@ -155,5 +155,14 @@ cmd_done:
   variable:
     cmd_done: bool
 
+asserv_result:
+  struct:
+    x_ord: float
+    y_ord: float
+    theta_ord: float
+    x_real: float
+    y_real: float
+    theta_real: float
+
 
 
