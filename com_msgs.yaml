@@ -94,7 +94,3 @@ SERVO:
 MAPASSERV:
   send: null
   receive: asserv_result
-  info:
-    file: ACTIONNEUR_cmd
-    object: 
-      - servo_array
