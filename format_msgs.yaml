@@ -83,7 +83,7 @@ ESC_Command:
       - Wanted_Forced_Consigne
       - old_consigne
 
-LED_STRUCT:
+LED_struct:
   struct:
     red: int
     green: int
@@ -93,16 +93,16 @@ LED_STRUCT:
     object:
       - led
 
-LED_ARRAY:
+LED_array:
   array:
     size: 44
-    type: LED_STRUCT
+    type: LED_struct
   info:
     file: IHM_type
     object:
       - led_array
 
-PUMP_STRUCT:
+PUMP_struct:
   struct:
     id: int
     enable: int # 1 activate, 0 stop
@@ -111,16 +111,16 @@ PUMP_STRUCT:
     object:
       - pump
 
-PUMP_ARRAY:
+PUMP_array:
   array:
     size: 6
-    type: PUMP_STRUCT
+    type: PUMP_struct
   info:
     file: ACTIONNEUR_type
     object:
       - pump_array
 
-SERVO:
+SERVO_struct:
   struct:
     id: int
     angle: int
@@ -129,16 +129,16 @@ SERVO:
     object:
       - servo
 
-SERVO_ARRAY:
+SERVO_array:
   array:
     size: 2
-    type: SERVO
+    type: SERVO_struct
   info:
     file: ACTIONNEUR_type
     object:
       - servo_array
 
-ODOM_STRUCT:
+ODOM_struct:
   struct:
     enable: int # 1 activate, 0 stop publishing
     freq: float # if 0, send only once else send freq
@@ -147,24 +147,13 @@ ODOM_STRUCT:
     object: 
       - odom_status
 
-odom_cmd:
-  struct:
-    enable: int # 1 activate, 0 stop
-    freq: float
-
-servo_cmd:
-  id: int
-  angle: int  
-
 action_done:
-  struct:
+  variable:
     action_done: bool
 
 cmd_done:
-  cmd_done: bool
-
-servo_cancel:
-  id: int
+  variable:
+    cmd_done: bool
 
 
 

@@ -59,7 +59,7 @@ SPEEDMAX:
       - Max_Speed
 
 GETODOM:
-  send: odom_cmd # enable: bool # 1 activate, 0 stop publishing
+  send: ODOM_struct # enable: bool # 1 activate, 0 stop publishing
   receive: Position
   info:
     file: ASSERV_cmd
@@ -84,9 +84,9 @@ BLOCK:
       - Block
 
 SERVO:
-  send: servo_cmd
+  send: SERVO_struct
   receive: action_done
   info:
     file: ACTIONNEUR_cmd
     object: 
-      - SERVO
+      - servo_array
