@@ -34,6 +34,14 @@ SETODOM:
     object: 
       - position_robot
 
+SETLIDAR:
+  send: Position
+  receive: cmd_done
+  info:
+    file: ASSERV_cmd
+    object: 
+      - position_robot
+
 MOVE:
   send: Position
   receive: action_done
