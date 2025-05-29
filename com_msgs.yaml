@@ -6,6 +6,10 @@ GETVERSION:
     object:
       - version
 
+LEASH:
+  send: null
+  receive: null
+
 HELP:
   send: null
   receive: null
