@@ -30,6 +30,18 @@ LED:
     object:
       - led_array
 
+VMAX:
+  send: vmax
+  receive: null
+
+VTMAX:
+  send: vtmax
+  receive: null
+
+AU:
+  send: action_done
+  receive: null
+
 SETODOM:
   send: Position
   receive: cmd_done

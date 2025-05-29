@@ -164,5 +164,11 @@ asserv_result:
     y_real: float
     theta_real: float
 
+vmax:
+  variable:
+    vmax: float
 
+vtmax:
+  variable:
+    vtmax: float
 
