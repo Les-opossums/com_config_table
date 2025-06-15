@@ -15,7 +15,7 @@ HELP:
   receive: null
 
 PUMP:
-  send: PUMP_STRUCT
+  send: PUMP_struct
   receive: cmd_done
   info:
     file: ACTIONNEUR_cmd
