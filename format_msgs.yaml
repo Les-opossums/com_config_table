@@ -102,6 +102,15 @@ LED_array:
     object:
       - led_array
 
+VACCUMGRIPPER_struct:
+  struct:
+    id: int
+    enable: int # 1 activate, 0 stop
+  info:
+    file: ACTIONNEUR_type
+    object:
+      - vaccumgripper
+
 PUMP_struct:
   struct:
     id: int
