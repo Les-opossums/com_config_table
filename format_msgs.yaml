@@ -102,6 +102,19 @@ LED_array:
     object:
       - led_array
 
+<<<<<<< Updated upstream
+=======
+VACCUMGRIPPER_struct:
+  struct:
+    id: int
+    mode: int # 0: stop, 1: pick, 2: drop, 3: revert_drop
+    side: int # 0: left, 1: right, 2 both
+  info:
+    file: ACTIONNEUR_type
+    object:
+      - vaccumgripper
+
+>>>>>>> Stashed changes
 PUMP_struct:
   struct:
     id: int
