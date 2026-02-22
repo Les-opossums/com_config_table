@@ -102,8 +102,6 @@ LED_array:
     object:
       - led_array
 
-<<<<<<< Updated upstream
-=======
 VACCUMGRIPPER_struct:
   struct:
     id: int
@@ -114,7 +112,6 @@ VACCUMGRIPPER_struct:
     object:
       - vaccumgripper
 
->>>>>>> Stashed changes
 PUMP_struct:
   struct:
     id: int
