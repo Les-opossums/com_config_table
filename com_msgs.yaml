@@ -22,7 +22,7 @@ PUMP:
     object:
       - pump_array
 
-VACCUMGRIPPER:
+PINCE:
   send: VACCUMGRIPPER_struct
   receive: cmd_done
   info:
